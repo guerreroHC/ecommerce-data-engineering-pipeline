@@ -320,15 +320,15 @@ When running Spark locally on Windows, Hadoop utilities may be required.
 A local Hadoop folder can be configured as:
 
 ```text
-C:\hadoopin\winutils.exe
-C:\hadoopin\hadoop.dll
+C:\hadoop\in\winutils.exe
+C:\hadoop\in\hadoop.dll
 ```
 
 Recommended environment variables:
 
 ```text
 HADOOP_HOME=C:\hadoop
-PATH includes C:\hadoopin
+PATH includes C:\hadoop\in
 ```
 
 This is only required for local Windows execution. When the project is later containerized with Docker, this workaround should no longer be necessary.
