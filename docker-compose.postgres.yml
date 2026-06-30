@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: olist_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: olist_user
+      POSTGRES_PASSWORD: olist_password
+      POSTGRES_DB: olist_warehouse
+    ports:
+      - "55432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U olist_user -d olist_warehouse"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
