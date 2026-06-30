@@ -1,0 +1,26 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Local environment
+.env
+
+# Data
+data/raw/
+data/bronze/
+data/silver/
+data/gold/
+data/streaming/
+
+# Logs
+logs/
+
+# Spark / Hadoop temp
+*.crc
+_SUCCESS
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
